@@ -14,7 +14,7 @@ the main screen, after a few seconds it will process and you can use the file.
 
 
 
-# to run
+# To run
 
 `docker-compose up` then wait.. it has to do a composer install and DB setup on first run
 
@@ -22,13 +22,13 @@ leave it for a bit and once composer container completes, exit and start back up
  as the migrations container needs composer to be done. [@todo] make this flow more cleaner
 
 
-# developing
+# Developing
 
 - `npm install`
 - changing css ? `npm run dev`
 
 
-# credits / tools used
+# Credits / tools used
     - docker
     - php8
     - mysql8
@@ -52,34 +52,34 @@ leave it for a bit and once composer container completes, exit and start back up
    -  popups and toasts
 ```
 
-# to do if there was more time
+# To do if there was more time
 ```
-    - ability to tag or create custom categories. currently it automatically creates categories based on mime type, but we would want to go further e.g music genre
-    - more media types e.g pdf, csv, txt -  all common types
-    -- better handling of media types. classes e.t.c dedicated to types of files and previews. e.g pdf preview thumbnail from first page
-    -- currently content types audio/video are check in controllers and views. there is probably a cleaner way to do this and have each 'Box' in the view rendered based on a component for each content type
-    - show artwork for mp3 files from ID3
-    - better authentication - email verification, 2FA. currently its a simple login/register
-    - user account removal - allow user to delete account and wipe all files including thumbnails
-    - websockets to notify when file is processesed and auto update the page. also could be used if logged in on 2 devices, new media will auto appear when uploaded on another device
-    - share media with other registered users, or add public links to files
-    - store (redis) where you were when listening/watching media, and resume from that last position
-    - add the ability to play media over chromecast (javascript/html)
-    - use more of FFMPEG abilities, e.g auto convert videos to common format
-    - upload multiple files at once, using chunks for large files.
-    -no reload after upload, elements should be added based on data send over sockets once the media is processed by jobs
+    - Ability to tag or create custom categories. currently it automatically creates categories based on mime type, but we would want to go further e.g music genre
+    - More media types e.g pdf, csv, txt -  all common types
+    -- Better handling of media types. classes e.t.c dedicated to types of files and previews. e.g pdf preview thumbnail from first page
+    -- Currently content types audio/video are check in controllers and views. there is probably a cleaner way to do this and have each 'Box' in the view rendered based on a component for each content type
+    - Show artwork for mp3 files from ID3
+    - Better authentication - email verification, 2FA. currently its a simple login/register
+    - User account removal - allow user to delete account and wipe all files including thumbnails
+    - Websockets to notify when file is processesed and auto update the page. also could be used if logged in on 2 devices, new media will auto appear when uploaded on another device
+    - Share media with other registered users, or add public links to files
+    - Store (redis) where you were when listening/watching media, and resume from that last position
+    - Add the ability to play media over chromecast (javascript/html)
+    - Use more of FFMPEG abilities, e.g auto convert videos to common format
+    - Upload multiple files at once, using chunks for large files.
+    - No reload after upload, elements should be added based on data send over sockets once the media is processed by jobs
     - tests, integragration, unit, code style checkers e.t.c
-    - CICD..pipelines .e.t.c for deployment
-    -- currently deployments are just a git push to ec2, and that triggers some docker commands with git hooks
-    - media delivered over cloudfront instead of direct from S3
-    - thumbnails could have been stored locally, but having it all on S3 makes it easier to share the project
-    - would have preferred to do it in vue but was more familiar with bootstrap+jquery so that was faster
-    - use tailwind for css
-    - dark theme
-    - better button layout for files, there are too many buttons for download, delete, edit. better to have a right click menu instead of all the different buttons for e
-    - use cron jobs to "watch" a folder and auto import media
-    - lazy load the page if there is a lot of content
-    - more meta data options e.g image exif data
+    - CICD..pipelines .e.t.c dev and prod env
+    -- Currently deployments are just a simple git push to ec2, and that triggers some docker commands via git hooks
+    - Media delivered over cloudfront instead of direct from S3. currently bucket is eu-west-1 
+    - Thumbnails could be stored locally, but having it all on S3 makes it easier to share the project
+    - Would have preferred to do it in vue js but was more familiar with bootstrap+jquery so reverted to that to get it done faster
+    - Dark theme, detect current system theme
+    - Better button layout for files, there are too many buttons for download, delete, edit. better to have a right click menu instead of all the different buttons for e
+    - Use cron jobs to "watch" a folder and auto import media
+    - Lazy load the page if there is a lot of content
+    - More meta data options e.g image exif data
+    - Different layout options. currently it shows icons and file name. The ability to show files in a list would be good 
     
     
     
