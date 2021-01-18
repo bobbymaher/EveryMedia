@@ -52,7 +52,7 @@ function playAudio(title, url)
 
     Swal.fire({
         icon: 'success',
-        title: 'now playing ' + title,
+        title: 'Now playing ' + title,
         toast: true,
         position: 'bottom-end',
         showConfirmButton: false,
