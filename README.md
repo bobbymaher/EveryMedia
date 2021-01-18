@@ -54,6 +54,7 @@ leave it for a bit and once composer container completes, exit and start back up
 
 # To do if there was more time
 ```
+    - Spend more time planning and focusing on the code structure instead of making a MVP
     - Ability to tag or create custom categories. currently it automatically creates categories based on mime type, but we would want to go further e.g music genre
     - More media types e.g pdf, csv, txt -  all common types
     -- Better handling of media types. classes e.t.c dedicated to types of files and previews. e.g pdf preview thumbnail from first page
