@@ -16,11 +16,13 @@ class CreateMediaTable extends Migration
         Schema::create('media', function (Blueprint $table) {
             $table->id();
             $table->text('name');
-            $table->uuid('user_id');
-            $table->string('hash');
+            $table->uuid('user_id')->index();;
+            $table->string('hash')->index();;
             $table->tinyInteger('available')->unsigned()->default(0);
             $table->json('meta_data');
             $table->timestamps();
+
+            $table->index(['user_id', 'hash']);
         });
     }
 

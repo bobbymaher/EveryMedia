@@ -18,6 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->integer('user_id')->unsigned()->default(0);
             $table->string('name');
             $table->timestamps();
+
         });
     }
 
