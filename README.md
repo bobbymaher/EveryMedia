@@ -13,6 +13,10 @@ After you upload the file, for a few seconds you will see "File is being process
 the main screen, after a few seconds it will process and you can use the file.
 
 
+  - uploaded videos get the frame extracted at second 1 and that is used as a thumbnail 
+  - all thumbnail images for videos/audio are resized so the page loads faster
+  - files are saved based on their sha1 hash, so uploading the same file with a different name does not cause a duplicate (currently no error displayed when duplicate uploaded)
+
 
 # To run
 
