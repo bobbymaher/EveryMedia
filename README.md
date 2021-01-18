@@ -54,18 +54,19 @@ leave it for a bit and once composer container completes, exit and start back up
 
 # to do if there was more time
 ```
-    - more media types e.g pdf, csv all common types
+    - more media types e.g pdf, csv, txt -  all common types
+    -- better handling of media types. classes e.t.c dedicated to types of files and previews. e.g pdf preview thumbnail from first page
     - show artwork for mp3 files from ID3
     - better authentication - email verification, 2FA. currently its a simple login/register
     - user account removal - allow user to delete account and wipe all files including thumbnails
-    - websockets to notify when file is processes and auto update the page. also could be used if logged in on 2 devices, new media will auto appear
-    - share media with other users
-    - use redis to store where you were when listening/watching media, and resume from that last location
-    - add the ability to send media over chromecast
-    - use more of FFMPEG abilities, e.g convert videos
-    - upload multiple files at once, using chunks. currently if we upload a movie over 2GB it fails
-    -- also no reload on upload, elements should be added from data by websockets or SPA where the audio does not stop playing
-    - tests, integragration, unit, code style checkers e.t.c 
+    - websockets to notify when file is processesed and auto update the page. also could be used if logged in on 2 devices, new media will auto appear when uploaded on another device
+    - share media with other registered users, or add public links to files
+    - store (redis) where you were when listening/watching media, and resume from that last position
+    - add the ability to play media over chromecast (javascript/html)
+    - use more of FFMPEG abilities, e.g auto convert videos to common format
+    - upload multiple files at once, using chunks for large files.
+    -no reload after upload, elements should be added based on data send over sockets once the media is processed by jobs
+    - tests, integragration, unit, code style checkers e.t.c
     - CICD..pipelines .e.t.c for deployment
     -- currently deployments are just a git push to ec2, and that triggers some docker commands with git hooks
     - media delivered over cloudfront instead of direct from S3
