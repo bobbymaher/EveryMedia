@@ -10909,6 +10909,13 @@ a.text-dark:focus {
 @tailwind utilities;
 */
 
+footer {
+  position: fixed;
+  height: 100px;
+  bottom: 0;
+  width: 100%;
+}
+
 .light_file_extension {
   display: inline;
   color: #a0aec0;

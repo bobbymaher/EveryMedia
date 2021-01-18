@@ -80,7 +80,7 @@ leave it for a bit and once composer container completes, exit and start back up
     - Lazy load the page if there is a lot of content
     - More meta data options e.g image exif data
     - Different layout options. currently it shows icons and file name. The ability to show files in a list would be good 
-    
+    - search for files (sphinx/elasticsearch or basic datatables in browser)
     
     
 ```
