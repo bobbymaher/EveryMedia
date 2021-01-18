@@ -14,7 +14,7 @@ the main screen, after a few seconds it will process and you can use the file.
 
 
 
-#to run
+# to run
 
 `docker-compose up` then wait.. it has to do a composer install and DB setup on first run
 
@@ -22,13 +22,13 @@ leave it for a bit and once composer container completes, exit and start back up
  as the migrations container needs composer to be done. [@todo] make this flow more cleaner
 
 
-#developing
+# developing
 
 - `npm install`
 - changing css ? `npm run dev`
 
 
-#credits / tools used
+# credits / tools used
     - docker
     - php8
     - mysql8
@@ -52,7 +52,7 @@ leave it for a bit and once composer container completes, exit and start back up
    -  popups and toasts
 ```
 
-#to do if there was more time
+# to do if there was more time
 ```
     - more media types e.g pdf, csv all common types
     - show artwork for mp3 files from ID3
