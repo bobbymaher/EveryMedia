@@ -1,0 +1,9 @@
+/var/log/nginx/*.log {
+           daily
+           missingok
+           rotate 7
+           compress
+           dateext
+           dateformat -%Y-%m-%d.log.gz
+           create 640 root root
+   }

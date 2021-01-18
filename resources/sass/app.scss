@@ -1,0 +1,86 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+/*
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*/
+
+
+
+
+
+
+// ==========SIDENAV================
+
+
+
+// ===== random
+
+.light_file_extension{
+    display: inline;
+    color:#a0aec0;
+}
+
+.card-img-top {
+    max-height: 150px
+}
+
+
+// ==========AUDIO===============
+
+#audio_control{
+    width:100%;
+}
+
+// ========= VIDEO ================
+
+.large-video-modal {
+    max-width: 75% !important; // we are overriding the bootstrap modal size, as we use it for video we want it bigger
+}
+
+
+// ========= PLAY BUTTON OVERLAY ON VIDEO =============
+.play-button-div {
+    margin: 0 auto;
+    display:table;
+    tex-align: center;
+    position:relative;
+    border:solid;
+}
+.play-button-div img {
+    display:block;
+}
+.play-button-div i{
+    width: 100px;
+    height: 100px;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 50px;
+    border: 2px solid #000000;
+    font-size: 80px;
+    text-align: center;
+    line-height:100px;
+    text-indent:15px;
+    opacity: 0.4;
+
+}
+.play-button-icon {
+
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
