@@ -60,7 +60,7 @@
                                         @elseif($file->available && $file->meta_data['content_type'] == 'audio')
 
 
-                                            <a href="#" onclick="playAudio('{{$file->name}}', '{!! $file->url !!}')">
+                                            <a href="#!" onclick="playAudio('{{$file->name}}', '{!! $file->url !!}')">
                                                 <img class="card-img-top" src="{{$file->thumbnail}}"
                                                      alt="{{$file->name}} download">
                                             </a>
