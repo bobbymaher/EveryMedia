@@ -19,7 +19,6 @@ use Illuminate\Support\Str;
 class UploadController extends Controller
 {
 
-    private $userId;
     private $disk;
 
     public function __construct()
@@ -159,6 +158,8 @@ class UploadController extends Controller
     public function fileUpload(Request $request)
     {
         /*
+         * //for now we accept all file types. probably risky as someone could upload an executable/scripts
+
         $request->validate([
             'file' => 'required|mimes:pdf,xlx,csv|max:2048',
         ]);

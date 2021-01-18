@@ -44,6 +44,8 @@ class ImageThumbnailJob implements ShouldQueue
      */
     public function handle()
     {
+        //@todo move this code to ThumnbnailController ?
+
         $thumbnailBuilder = new ThumnbnailController();
 
         $this->putFileName .= ThumnbnailController::THUMBNAIL_EXTENSION;
