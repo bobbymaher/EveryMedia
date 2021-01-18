@@ -7,7 +7,6 @@ use FFMpeg;
 
 use Owenoj\LaravelGetId3\GetId3;
 
-use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
 class ThumnbnailController extends Controller

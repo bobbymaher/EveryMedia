@@ -10,22 +10,10 @@ use App\Models\Media;
 
 
 use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
-
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 
-#use Storage;
-#use Illuminate\Http\Request;
-use Illuminate\Http\UploadedFile;
-use Intervention\Image\Facades\Image;
-use Pion\Laravel\ChunkUpload\Exceptions\UploadMissingFileException;
-use Pion\Laravel\ChunkUpload\Handler\AbstractHandler;
-use Pion\Laravel\ChunkUpload\Handler\HandlerFactory;
-use Pion\Laravel\ChunkUpload\Receiver\FileReceiver;
 
 
 class UploadController extends Controller
