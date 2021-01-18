@@ -81,6 +81,6 @@ leave it for a bit and once composer container completes, exit and start back up
     - More meta data options e.g image exif data
     - Different layout options. currently it shows icons and file name. The ability to show files in a list would be good 
     - search for files (sphinx/elasticsearch or basic datatables in browser)
-    
+    - show most recent / most acccessed media at the top, push unused media to the bottom. accessed_at timestamp in the DB
     
 ```
