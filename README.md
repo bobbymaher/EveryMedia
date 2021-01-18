@@ -54,8 +54,10 @@ leave it for a bit and once composer container completes, exit and start back up
 
 # to do if there was more time
 ```
+    - ability to tag or create custom categories. currently it automatically creates categories based on mime type, but we would want to go further e.g music genre
     - more media types e.g pdf, csv, txt -  all common types
     -- better handling of media types. classes e.t.c dedicated to types of files and previews. e.g pdf preview thumbnail from first page
+    -- currently content types audio/video are check in controllers and views. there is probably a cleaner way to do this and have each 'Box' in the view rendered based on a component for each content type
     - show artwork for mp3 files from ID3
     - better authentication - email verification, 2FA. currently its a simple login/register
     - user account removal - allow user to delete account and wipe all files including thumbnails
@@ -77,6 +79,8 @@ leave it for a bit and once composer container completes, exit and start back up
     - better button layout for files, there are too many buttons for download, delete, edit. better to have a right click menu instead of all the different buttons for e
     - use cron jobs to "watch" a folder and auto import media
     - lazy load the page if there is a lot of content
+    - more meta data options e.g image exif data
+    
     
     
 ```
