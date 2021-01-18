@@ -156,11 +156,9 @@
 
             </div>
 
-
         </div>
     </footer>
-
-
+    
     <!-- the video popup box -->
 
     <div class="modal fade" id="video_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
