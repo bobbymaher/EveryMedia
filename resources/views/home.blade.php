@@ -138,7 +138,7 @@
 
     <!-- footer , mostly used for media controls -->
 
-    <footer id="audio_footer" class="footer" style="display: none">
+    <footer id="audio_footer" class="footer fixed-bottom" style="display: none">
         <div class="container  col-lg-10">
             <div class="row">
 
