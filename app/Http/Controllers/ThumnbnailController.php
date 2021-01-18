@@ -20,7 +20,11 @@ class ThumnbnailController extends Controller
     const PROCESSING_THUMB = '/images/processing.png';
 
 
-    public function generateThumbnailFromVideo(string $file)
+    /**
+     * @param string $file
+     * @return string
+     */
+    public function generateThumbnailFromVideo(string $file) : string
     {
 
         $thumbFile = $this->convertVideoToThumbnail($file);
@@ -28,7 +32,11 @@ class ThumnbnailController extends Controller
         return $thumbFile;
     }
 
-    public function delete(string $file){
+    /**
+     * @param string $file
+     */
+    public function delete(string $file) : void
+    {
 
         if (\File::exists($file)) {
             \File::delete($file);
@@ -36,7 +44,11 @@ class ThumnbnailController extends Controller
     }
 
 
-    private function convertVideoToThumbnail(string $file)
+    /**
+     * @param string $file
+     * @return string
+     */
+    private function convertVideoToThumbnail(string $file) : string
     {
         $ffmpeg = \FFMpeg\FFMpeg::create([
             'ffmpeg.binaries' => '/usr/bin/ffmpeg',
@@ -56,12 +68,16 @@ class ThumnbnailController extends Controller
     }
 
 
-    public function extractId3FromMp3(string $file) {
+    /**
+     * @param string $file
+     */
+    public function extractId3FromMp3(string $file): void
+    {
 
         //@todo use an id3 lib to get the album artwork
     }
 
-    public function resizeImage(string $fileName, string $outputFile = '', int $width = 400, int $height = 400)
+    public function resizeImage(string $fileName, string $outputFile = '', int $width = 400, int $height = 400) : void
     {
 
         if(empty($outputFile)){

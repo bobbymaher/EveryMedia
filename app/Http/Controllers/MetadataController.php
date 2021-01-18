@@ -7,12 +7,14 @@ use Illuminate\Support\Str;
 class MetadataController extends Controller
 {
 
-    public function getMetaData(string $file) {
+    public function getMetaData(string $file): string
+    {
 
     }
 
 
-    public function getMimeTypeOfFile(string $file){
+    public function getMimeTypeOfFile(string $file)
+    {
         $mimeType = mime_content_type($file);
         $contentType = 'other';
 

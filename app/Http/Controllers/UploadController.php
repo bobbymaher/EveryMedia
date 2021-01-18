@@ -8,7 +8,6 @@ use App\Jobs\VideoThumbnailJob;
 
 use App\Models\Media;
 
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -27,8 +26,8 @@ class UploadController extends Controller
     }
 
 
-    /** test for now */
-    public function upload(): void
+    /** test for now  - could be used by a cron job*/
+    public function scanDirectoryForFiles(): void
     {
         ini_set('memory_limit', '-1');
         $files = scandir(resource_path('temp'));
@@ -119,7 +118,8 @@ class UploadController extends Controller
      * @param array $metaData
      * @param string $userId
      */
-    public function processUpload(string $file, string $fileHash, array $metaData, string $userId) {
+    public function processUpload(string $file, string $fileHash, array $metaData, string $userId) : void
+    {
 
         // save the file
         $putFileName = $fileHash . '.' . $metaData['extension'];
