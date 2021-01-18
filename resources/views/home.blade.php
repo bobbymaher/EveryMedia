@@ -5,7 +5,7 @@
 
 
 
-    <div class="container col-lg-12">
+    <div class="container col-lg-12" style="margin-bottom: 100px;">
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card">
