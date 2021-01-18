@@ -10909,6 +10909,10 @@ a.text-dark:focus {
 @tailwind utilities;
 */
 
+.main-content {
+  margin-bottom: 100px;
+}
+
 footer {
   position: fixed;
   height: 100px;
