@@ -56,6 +56,14 @@
                                                                                       aria-hidden="true"></i></span>
                                                 </div>
                                             </a>
+
+                                        @elseif($file->available && $file->meta_data['content_type'] == 'audio')
+
+
+                                            <a href="#" onclick="playAudio('{{$file->name}}', '{!! $file->url !!}')">
+                                                <img class="card-img-top" src="{{$file->thumbnail}}"
+                                                     alt="{{$file->name}} download">
+                                            </a>
                                         @else
                                             <a target="_{{$file->hash}}" href="{!! $file->url !!}">
                                                 <img class="card-img-top" src="{{$file->thumbnail}}"
