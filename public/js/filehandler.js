@@ -1,12 +1,60 @@
-$(document).ready(function () {
+(function () {
+    var fileCatcher = document.getElementById('file-catcher');
+    var fileInput = document.getElementById('file-input');
+    var fileListDisplay = document.getElementById('file-list-display');
 
+    var fileList = [];
+    var renderFileList, sendFile;
 
-    document.getElementById("file_upload").onchange = function () {
-        document.getElementById("form_upload").submit();
+    fileCatcher.addEventListener('submit', function (evnt) {
+        evnt.preventDefault();
+        fileList.forEach(function (file) {
+            sendFile(file);
+        });
+    });
+
+    fileInput.addEventListener('change', function (evnt) {
+        fileList = [];
+        for (var i = 0; i < fileInput.files.length; i++) {
+            fileList.push(fileInput.files[i]);
+        }
+        renderFileList();
+    });
+
+    renderFileList = function () {
+        fileListDisplay.innerHTML = '';
+        fileList.forEach(function (file, index) {
+            var fileDisplayEl = document.createElement('p');
+            fileDisplayEl.innerHTML = (index + 1) + ': ' + file.name;
+            fileListDisplay.appendChild(fileDisplayEl);
+        });
+    };
+
+    sendFile = function (file) {
+        var formData = new FormData();
+        var request = new XMLHttpRequest();
+
+        var action=$('#file-catcher').attr('action');
+
+        const token =  $('meta[name="csrf-token"]').attr('content');
+
+        formData.set('_token', token);
+        formData.set('file', file);
+        request.open("POST",  action);
+        request.send(formData);
+    };
+/**
+ *
+ * //old single file upload
+    document.getElementById("file-input").onchange = function () {
+        document.getElementById("form-upload").submit();
         $('#upload_status').text('Uploading...');
     };
 
-});
+ **/
+
+})();
+
 
 
 function renameFile(originalName, hash)

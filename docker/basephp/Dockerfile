@@ -78,6 +78,6 @@ RUN ln -s /etc/php8 /etc/php
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 RUN sed -i 's/memory_limit = 128M/memory_limit = 512M/' /etc/php/php.ini
-RUN sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 2050M/' /etc/php/php.ini
+RUN sed -i 's/upload_max_filesize = 100M/upload_max_filesize = 2050M/' /etc/php/php.ini
 RUN sed -i 's/post_max_size = 8M/post_max_size = 500M/' /etc/php/php.ini
 
