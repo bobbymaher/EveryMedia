@@ -1,5 +1,13 @@
+![homepage](screenshot.png)
+# Laravel: store and view media
+
+
+#setup
+- you will need to add aws keys for S3 access in the .env file.
+- set all DB database/user/pass to everymedia. This can be changed in the docker-compose files
+
 # How it works
-you can login or register. once in you can upload files.
+
 When you upload a file it gets stored temporarily on the server, then processed and uploaded to s3.
 
 the media is put on a background queue to:
@@ -87,5 +95,5 @@ leave it for a bit and once composer container completes, exit and start back up
     - Different layout options. currently it shows icons and file name. The ability to show files in a list would be good 
     - search for files (sphinx/elasticsearch or basic datatables in browser)
     - show most recent / most acccessed media at the top, push unused media to the bottom. accessed_at timestamp in the DB
-    
+    - autoplay next music track
 ```
