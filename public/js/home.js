@@ -16,6 +16,10 @@ $(document).ready(function () {
         console.log(this.id);
     });
 
+    $('#video_modal').on('hidden.bs.modal', function () {
+        stopVideo();
+    })
+
 });
 
 
@@ -69,3 +73,11 @@ function stopAudio()
     audio.pause();
 }
 
+
+function stopVideo() {
+
+    let video = document.getElementById('video_player');
+    video.pause();
+    video.removeAttribute('src'); // empty source
+    video.load();
+}
