@@ -1,8 +1,9 @@
-![homepage](screenshot.png)
 # Laravel: store and view media
 
+![homepage](screenshot.png)
 
-#setup
+
+# setup
 - you will need to add aws keys for S3 access in the .env file.
 - set all DB database/user/pass to everymedia. This can be changed in the docker-compose files
 
