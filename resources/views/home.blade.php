@@ -14,12 +14,14 @@
 
                         <div class="btn-group btn-group-toggle" id="category_group" data-toggle="buttons">
                             <label class="btn btn-secondary active">
-                                <input class="category_button" type="radio" name="options" id="category_all" autocomplete="off" checked> All
+                                <input class="category_button" type="radio" name="options" id="category_all"
+                                       autocomplete="off" checked> All
                             </label>
 
                             @foreach($categories as $category)
                                 <label class="btn btn-secondary">
-                                    <input class="category_button" type="radio" name="options" id="category_{{$category}}" autocomplete="off"> {{$category}}
+                                    <input class="category_button" type="radio" name="options"
+                                           id="category_{{$category}}" autocomplete="off"> {{$category}}
                                 </label>
                             @endforeach
 
@@ -42,7 +44,8 @@
                         <div class="container col-lg-11">
                             <div class="row">
                                 @foreach($files as $file)
-                                    <div style="width: 18rem;" id="file_div_{{$file->hash}}" class="card all_media category_all category_{{$file->meta_data['content_type']}}">
+                                    <div style="width: 18rem;" id="file_div_{{$file->hash}}"
+                                         class="card all_media category_all category_{{$file->meta_data['content_type']}}">
 
                                         @if($file->available && $file->meta_data['content_type'] == 'video')
 
@@ -73,7 +76,9 @@
                                         @endif
 
                                         <div class="card-body">
-                                            <h5 class="card-title" id="title_{{$file->hash}}">{{$file->name}}<p class="light_file_extension"> {{$file->meta_data['content_type']}}</p></h5>
+                                            <h5 class="card-title" id="title_{{$file->hash}}">{{$file->name}}<p
+                                                    class="light_file_extension"> {{$file->meta_data['content_type']}}</p>
+                                            </h5>
                                             <p class="card-text">{{\App\Http\Controllers\FileController::formatSizeUnits($file->meta_data['size'])}}</p>
 
 
@@ -81,7 +86,7 @@
                                                 <p class="card-text"> {{ __('File is being processed, check back in a min') }}</p>
                                             @else
                                                 <a target="_{{$file->hash}}" href="{!! $file->url !!}"
-                                                   class="btn btn-primary">  <i class="fa fa-download"></i></a>
+                                                   class="btn btn-primary"> <i class="fa fa-download"></i></a>
                                                 <button type="submit" class="btn btn-danger"
                                                         onclick="deleteFile('{{$file->hash}}')">
                                                     <i class="fa fa-trash"></i>
@@ -92,7 +97,7 @@
                                                 </button>
 
 
-                                            @switch($file->meta_data['content_type'])
+                                                @switch($file->meta_data['content_type'])
                                                     @case('video')
 
                                                     @break
@@ -111,12 +116,13 @@
                                                     @case('image')
                                                 <!--  <img src="{!! $file->url !!}" width="100%" /> -->
                                                     <a target="_{{$file->hash}}" href="{!! $file->url !!}"
-                                                       class="btn btn-primary">  <i class="fa fa-external-link"></i></a>
+                                                       class="btn btn-primary"> <i class="fa fa-external-link"></i></a>
                                                     @break
 
                                                     @case('other')
                                                     <p class="card-subtitle">{{ __('Unsupported File') }}
-                                                        '{{$file->meta_data['extension']}}' {{ __('You can still attempt to open/download the file')}}</p>
+                                                        '{{$file->meta_data['extension']}}
+                                                        ' {{ __('You can still attempt to open/download the file')}}</p>
 
                                                     @break
 
@@ -150,7 +156,7 @@
         <div class="container  col-lg-10">
             <div class="row">
 
-            <div class="col-lg-4">
+                <div class="col-lg-4">
                     <h1 id="audio_now_playing">None</h1>
                 </div>
 
@@ -202,33 +208,39 @@
                             aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
-                    <form id="form_upload" action="{{ route('file.upload.post') }}" method="POST"
-                          enctype="multipart/form-data">
-                        @csrf
-                        <div class="row">
+                    <div class="row">
 
-                            <div class="col-md-6">
-                                <input id="file_upload" type="file" name="file" class="form-control">
-                            </div>
-                            <div id="upload_status" class="col-md-6">
+                        <p>Drag and drop multiple files at once</p>
+                        <div class="col-lg-6">
+
+                            <form id='file-catcher' action="{{ route('file.upload.post') }}">
+                                <input id='file-input' method="POST"
+                                       type='file' multiple/>
+                                <button type='submit'>
+                                    Upload files
+                                </button>
+                            </form>
+
+                            <div id='file-list-display'></div>
+                            <div class="col-lg-6">
+                                <div id="upload_status" class="col-md-6">
+                                </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('Close') }}</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('Close') }}</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-
-    <script>
-        var file_delete_url = '{{route('file.delete')}}';
-        var file_rename_url = '{{route('file.rename')}}';
-    </script>
-    <script src="/js/home.js?version={{ env('VERSION', '0.0') }}"></script>
-    <script src="/js/filehandler.js?version={{ env('VERSION', '0.0') }}"></script>
+        <script>
+            var file_delete_url = '{{route('file.delete')}}';
+            var file_rename_url = '{{route('file.rename')}}';
+        </script>
+        <script src="/js/home.js?version={{ env('VERSION', '0.0') }}"></script>
+        <script src="/js/filehandler.js?version={{ env('VERSION', '0.0') }}"></script>
 
 @endsection

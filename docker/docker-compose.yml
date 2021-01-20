@@ -53,7 +53,6 @@ services:
     restart: unless-stopped
     container_name: everymedia-php-fpm
     volumes:
-      - ./php-fpm/php-ini-overrides.ini:/etc/php/7.1/fpm/conf.d/99-overrides.ini
       - ..:/var/www/everymedia
       - ${VOLUMES_DIR}/laravel_storage:/var/www/everymedia/storage
       - ${VOLUMES_DIR}/logs/php-fpm:/var/log/php-fpm
