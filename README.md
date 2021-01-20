@@ -79,7 +79,7 @@ leave it for a bit and once composer container completes, exit and start back up
     - Store (redis) where you were when listening/watching media, and resume from that last position
     - Add the ability to play media over chromecast (javascript/html)
     - Use more of FFMPEG abilities, e.g auto convert videos to common format
-    - Upload multiple files at once, using chunks for large files.
+    - Upload multiple files at once, using chunks for large files. (part done, can do multi file, no chunks)
     - No reload after upload, elements should be added based on data send over sockets once the media is processed by jobs
     - tests, integragration, unit, code style checkers e.t.c
     - CICD..pipelines .e.t.c dev and prod env
